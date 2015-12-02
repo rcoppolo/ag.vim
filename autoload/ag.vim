@@ -151,7 +151,7 @@ function! ag#Ag(cmd, args)
 
   " If highlighting is on, highlight the search keyword.
   if exists('g:ag_highlight')
-    let @/ = matchstr(a:args, "\\v(-)\@<!(\<)\@<=\\w+|['\"]\\zs.{-}\\ze['\"]")
+    let @/ = matchstr(l:grepargs, "\\v(-)\@<!(\<)\@<=\\w+|['\"]\\zs.{-}\\ze['\"]")
     call feedkeys(":let &hlsearch=1 \| echo \<CR>", 'n')
   end
 
